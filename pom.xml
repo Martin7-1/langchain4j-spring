@@ -15,6 +15,7 @@
 
     <modules>
         <module>langchain4j-open-ai-spring-boot-starter</module>
+        <module>langchain4j-azure-open-ai-spring-boot-starter</module>
     </modules>
 
     <properties>
@@ -29,8 +30,10 @@
 
             <dependency>
                 <groupId>dev.langchain4j</groupId>
-                <artifactId>langchain4j-open-ai</artifactId>
+                <artifactId>langchain4j-bom</artifactId>
                 <version>${project.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
 
             <dependency>
