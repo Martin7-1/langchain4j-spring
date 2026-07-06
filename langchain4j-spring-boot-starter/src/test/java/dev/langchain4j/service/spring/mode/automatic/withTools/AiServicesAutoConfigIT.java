@@ -6,6 +6,7 @@ import dev.langchain4j.service.spring.event.AiServiceRegisteredEvent;
 import dev.langchain4j.service.spring.mode.automatic.withTools.aop.ToolObserverAspect;
 import dev.langchain4j.service.spring.mode.automatic.withTools.listener.AiServiceRegisteredEventListener;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.EnabledIfEnvironmentVariable;
 import org.springframework.boot.autoconfigure.AutoConfigurations;
 import org.springframework.boot.test.context.runner.ApplicationContextRunner;
 
