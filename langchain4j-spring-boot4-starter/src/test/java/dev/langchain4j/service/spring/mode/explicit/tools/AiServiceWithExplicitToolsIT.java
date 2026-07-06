@@ -2,6 +2,7 @@ package dev.langchain4j.service.spring.mode.explicit.tools;
 
 import dev.langchain4j.service.spring.AiServicesAutoConfiguration;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.EnabledIfEnvironmentVariable;
 import org.springframework.boot.autoconfigure.AutoConfigurations;
 import org.springframework.boot.test.context.runner.ApplicationContextRunner;
 
@@ -9,6 +10,7 @@ import static dev.langchain4j.service.spring.mode.explicit.tools.Tools1.TOOL_1_T
 import static dev.langchain4j.service.spring.mode.explicit.tools.Tools2.TOOL_2_TEMPERATURE;
 import static org.assertj.core.api.Assertions.assertThat;
 
+@EnabledIfEnvironmentVariable(named = "OPENAI_API_KEY", matches = ".+")
 class AiServiceWithExplicitToolsIT {
 
     ApplicationContextRunner contextRunner = new ApplicationContextRunner().withConfiguration(AutoConfigurations.of(AiServicesAutoConfiguration.class));

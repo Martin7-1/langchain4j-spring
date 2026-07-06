@@ -10,6 +10,7 @@ import org.springframework.context.annotation.ComponentScan;
 import static dev.langchain4j.service.spring.mode.ApiKeys.OPENAI_API_KEY;
 import static org.assertj.core.api.Assertions.assertThat;
 
+@EnabledIfEnvironmentVariable(named = "OPENAI_API_KEY", matches = ".+")
 class DifferentPackageAiServiceIT {
 
     ApplicationContextRunner contextRunner = new ApplicationContextRunner()

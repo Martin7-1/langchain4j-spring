@@ -9,6 +9,7 @@ import org.springframework.boot.test.context.runner.ApplicationContextRunner;
 import static dev.langchain4j.service.spring.mode.ApiKeys.OPENAI_API_KEY;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
+@EnabledIfEnvironmentVariable(named = "OPENAI_API_KEY", matches = ".+")
 class AiServiceWithMissingAnnotationIT {
 
     ApplicationContextRunner contextRunner = new ApplicationContextRunner()

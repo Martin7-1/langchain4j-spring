@@ -9,6 +9,7 @@ import static dev.langchain4j.service.spring.mode.explicit.tools.Tools1.TOOL_1_T
 import static dev.langchain4j.service.spring.mode.explicit.tools.Tools2.TOOL_2_TEMPERATURE;
 import static org.assertj.core.api.Assertions.assertThat;
 
+@EnabledIfEnvironmentVariable(named = "OPENAI_API_KEY", matches = ".+")
 class AiServiceWithExplicitToolsIT {
 
     ApplicationContextRunner contextRunner = new ApplicationContextRunner().withConfiguration(AutoConfigurations.of(AiServicesAutoConfig.class));

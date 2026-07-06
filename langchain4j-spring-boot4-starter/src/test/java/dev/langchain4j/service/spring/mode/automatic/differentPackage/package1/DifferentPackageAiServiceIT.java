@@ -3,6 +3,7 @@ package dev.langchain4j.service.spring.mode.automatic.differentPackage.package1;
 import dev.langchain4j.service.spring.AiServicesAutoConfiguration;
 import dev.langchain4j.service.spring.mode.automatic.differentPackage.package2.DifferentPackageAiService;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.EnabledIfEnvironmentVariable;
 import org.springframework.boot.autoconfigure.AutoConfigurations;
 import org.springframework.boot.test.context.runner.ApplicationContextRunner;
 import org.springframework.context.annotation.ComponentScan;
@@ -10,6 +11,7 @@ import org.springframework.context.annotation.ComponentScan;
 import static dev.langchain4j.service.spring.mode.ApiKeys.OPENAI_API_KEY;
 import static org.assertj.core.api.Assertions.assertThat;
 
+@EnabledIfEnvironmentVariable(named = "OPENAI_API_KEY", matches = ".+")
 class DifferentPackageAiServiceIT {
 
     ApplicationContextRunner contextRunner = new ApplicationContextRunner()

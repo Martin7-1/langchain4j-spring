@@ -3,12 +3,14 @@ package dev.langchain4j.service.spring.mode.automatic.withModerationModel;
 import dev.langchain4j.service.ModerationException;
 import dev.langchain4j.service.spring.AiServicesAutoConfiguration;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.EnabledIfEnvironmentVariable;
 import org.springframework.boot.autoconfigure.AutoConfigurations;
 import org.springframework.boot.test.context.runner.ApplicationContextRunner;
 
 import static dev.langchain4j.service.spring.mode.ApiKeys.OPENAI_API_KEY;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
+@EnabledIfEnvironmentVariable(named = "OPENAI_API_KEY", matches = ".+")
 class AiServiceWithModerationModelIT {
 
     ApplicationContextRunner contextRunner = new ApplicationContextRunner()
