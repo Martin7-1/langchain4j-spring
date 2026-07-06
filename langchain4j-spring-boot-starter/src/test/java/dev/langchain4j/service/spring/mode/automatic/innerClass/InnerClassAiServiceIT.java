@@ -3,6 +3,7 @@ package dev.langchain4j.service.spring.mode.automatic.innerClass;
 import dev.langchain4j.service.spring.AiServicesAutoConfig;
 import dev.langchain4j.service.spring.mode.automatic.innerClass.OuterClass.InnerAiService;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.EnabledIfEnvironmentVariable;
 import org.springframework.boot.autoconfigure.AutoConfigurations;
 import org.springframework.boot.test.context.runner.ApplicationContextRunner;
 
