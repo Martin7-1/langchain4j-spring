@@ -75,9 +75,9 @@ public class SpringRestClient implements HttpClient {
     @Override
     public SuccessfulHttpResponse execute(HttpRequest request) throws HttpException {
         try {
-            ResponseEntity<String> responseEntity = toSpringRestClientRequest(request)
+            ResponseEntity<byte[]> responseEntity = toSpringRestClientRequest(request)
                     .retrieve()
-                    .toEntity(String.class);
+                    .toEntity(byte[].class);
 
             return SuccessfulHttpResponse.builder()
                     .statusCode(responseEntity.getStatusCode().value())
